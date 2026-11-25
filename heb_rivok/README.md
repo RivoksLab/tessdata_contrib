@@ -66,13 +66,20 @@ tessdata_best.
 - **Fine-tuning only:** `lstmtraining --old_traineddata`, learning rate 1e-4, on a CPU: 1.0 from
   tessdata_best `script/Hebrew` on synthetic lines; 2.0 continued from 1.0. The released file is an
   average of the weights of the last training checkpoints.
-- **Real lines (2.0):** about 24,600 printed lines from public-domain Hebrew books of the 19th and
-  early 20th century (scans on Wikimedia Commons, Hebrew Wikisource transcriptions, CC BY-SA 4.0).
+- **Real lines (2.0):** 15,663 printed lines, from a pool of 24,643, from public-domain Hebrew books of
+  the 19th and early 20th century (scans on Wikimedia Commons, Hebrew Wikisource transcriptions,
+  CC BY-SA 4.0).
 - **Synthetic lines:** Tesseract's Hebrew training text (langdata_lstm), document-style and
   Hebrew/English lines, and vowelled text (Tanakh, Mishnah, Project Ben-Yehuda, modern text vowelled
   with Dicta's model), in about 165 open fonts, degraded to look scanned, faxed, faded or photographed.
-- **Dictionary:** Tesseract's Hebrew word list plus the 150,000 most frequent English words from
-  langdata_lstm.
+- **Dictionary:** the word, punctuation and number lists are kept: langdata_lstm's Hebrew word list plus
+  the 150,000 most frequent English words, and its Hebrew and English punctuation and number patterns,
+  as in 1.0. 2.0's word list has 262 more entries, all words with one of its new marks.
+- **Reproducing it:** everything 2.0 was trained on, the code and the step-by-step recipe are in the
+  repository's [`training/v2/`](https://github.com/RivoksLab/tesseract-heb-rivok/tree/main/training/v2);
+  the lines, the exact training lists and the checkpoints are in the dataset
+  [Rivok/tesseract-heb-rivok-v2-lines](https://huggingface.co/datasets/Rivok/tesseract-heb-rivok-v2-lines)
+  (CC BY-SA 4.0). From them the released files rebuild byte for byte.
 
 ## Notes for maintainers and users
 

@@ -63,7 +63,17 @@ tessdata_best.
   `heb` on synthetic lines; 2.0 continued from 1.0 with real old-print lines (public-domain books,
   Hebrew Wikisource transcriptions) and synthetic Hebrew and vowelled lines. The released file is an
   average of the weights of the last training checkpoints.
+- **Real lines (2.0):** 14,291 printed lines from public-domain Hebrew books (scans on Wikimedia
+  Commons, Hebrew Wikisource transcriptions, CC BY-SA 4.0).
 - **Characters added:** maqaf ־, geresh ׳, gershayim ״ (1.0); the niqqud above and em dash (2.0).
+- **Dictionary:** the word, punctuation and number lists are kept: langdata_lstm's Hebrew word list,
+  punctuation and number patterns, as in 1.0. 2.0's word list has 4,570 more entries, all words with
+  the marks it added.
+- **Reproducing it:** everything 2.0 was trained on, the code and the step-by-step recipe are in the
+  repository's [`training/v2/`](https://github.com/RivoksLab/tesseract-heb-rivok/tree/main/training/v2);
+  the lines, the exact training lists and the checkpoints are in the dataset
+  [Rivok/tesseract-heb-rivok-v2-lines](https://huggingface.co/datasets/Rivok/tesseract-heb-rivok-v2-lines)
+  (CC BY-SA 4.0). From them the released files rebuild byte for byte.
 
 ## Licence
 
